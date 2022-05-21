@@ -28,9 +28,10 @@ router.post('/post', async (req, res) => {
 });
 
 // Get all phones
-router.get('/getAll', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const phones = await phoneModel.find(); // Find all phones in the DB
+        console.log('Retrieving all phones')
         res.status(200).json(phones); // Sends back all the phones
     } catch (error) {
         res.status(404).json({message: error.message}); // Sends back the error
