@@ -1,0 +1,39 @@
+body{
+    margin: 2rem;
+}
+
+.phones_ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
+    gap: 2rem;
+    justify-content: center;
+}
+
+
+.phone{
+    overflow: hidden;
+    box-shadow: 0 2px 20px grey;
+    border-radius: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 100ms;
+}
+.phone:hover{
+    transform: scale(1.04);
+}
+
+.phone_image{
+    height: 12rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.phone_button{
+    padding: 1rem;
+    background: transparent;
+}
+.phone_button:hover{
+    transform: scale(1.02);
+}

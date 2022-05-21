@@ -32,6 +32,7 @@ router.get('/', async (req, res) => {
     try {
         const phones = await phoneModel.find(); // Find all phones in the DB
         console.log('Retrieving all phones')
+        await new Promise(resolve => setTimeout(resolve, 2000)); // Waits 2 seconds to see loading bar
         res.status(200).json(phones); // Sends back all the phones
     } catch (error) {
         res.status(404).json({message: error.message}); // Sends back the error
