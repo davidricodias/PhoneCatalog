@@ -23,7 +23,7 @@ function Phones(props) {
 
   return(
     <div className='phones'>
-        {loading ? <p>Loading...</p> :
+        {loading ? <div className='spinner'></div>:
             <ul className='phones_ul'>
                 {
                     phones.filter((phone) => {
@@ -31,6 +31,8 @@ function Phones(props) {
                             return phone
                         } else if (phone.name.includes(props.filter)){
                             return phone;
+                        } else {
+                          return undefined;
                         }
                     }).map(phone => <li key={phone.id}><Phone phone={phone} /></li>)
                 }
